@@ -141,8 +141,15 @@ async function main() {
     await checkWordList();
     let possibleWords = ""
     console.log("Possible words: ");
+    let idx = 0;
     validWords.forEach(word => {
+        if (idx === 10) {
+            console.log(possibleWords);
+            possibleWords = "";
+            idx = 0;
+        }
         possibleWords += word + " ";
+        ++idx;
     });
     console.log(possibleWords);
 }
